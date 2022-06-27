@@ -6,6 +6,8 @@
   <title>{{ title }} | {{ site.title }}</title>
 </head>
 <body>
+  {% include "partials/header.njk" %}
+
   <main>
     {{ content | safe }}
   </main>
