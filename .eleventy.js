@@ -9,6 +9,9 @@ module.exports = function (eleventyConfig) {
     return collection.getFilteredByGlob(`./src/content/pages/*.md`);
   });
 
+  // Assets
+  eleventyConfig.addPassthroughCopy("./src/assets/images");
+
   return {
     dir: {
       layouts: "_includes/layouts",
