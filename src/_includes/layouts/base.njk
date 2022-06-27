@@ -9,7 +9,7 @@
   {% include "partials/header.njk" %}
 
   <main>
-    {{ content | safe }}
+    {% block content %}{% endblock %}
   </main>
 </body>
 </html>
