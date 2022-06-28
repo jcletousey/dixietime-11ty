@@ -1,2 +1,9 @@
+# NPM dependencies
 node_modules
+
+# IDEs
+.history
+
+# Build
+src/assets/styles/main.css
 dist
