@@ -1,4 +1,6 @@
 {
   "title": "Dixie Time",
-  "locale": "fr_FR"
+  "description": "Site de Dixie Time, groupe de musique de jazz de la Nouvelle-Orleans",
+  "locale": "fr_FR",
+  "url": "https://www.dixietime.fr"
 }
