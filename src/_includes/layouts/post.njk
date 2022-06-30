@@ -1,0 +1,14 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+<article>
+  <header>
+    <h1>{{ title }}</h1>
+    <p>
+      Publié le <time datetime="{{ date }}">{{ date | formatDate(locale) }}</time>
+    </p>
+  </header>
+
+  {{ content | safe}}
+</article>
+{% endblock %}
