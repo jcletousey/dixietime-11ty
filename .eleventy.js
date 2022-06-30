@@ -15,7 +15,7 @@ module.exports = function (eleventyConfig) {
   });
 
   // Filters
-  eleventyConfig.addFilter("formatDate", function (str, locale) {
+  eleventyConfig.addFilter("formatDate", function (str) {
     const date = new Date(str);
     const options = {
       weekday: "long",
@@ -23,7 +23,8 @@ module.exports = function (eleventyConfig) {
       month: "long",
       day: "numeric",
     };
-    return new Intl.DateTimeFormat(locale, options).format(date);
+    return new Intl.DateTimeFormat("fr", options).format(date);
+  });
   });
 
   // Assets

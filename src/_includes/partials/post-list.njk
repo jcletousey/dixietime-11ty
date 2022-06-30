@@ -4,7 +4,7 @@
   <article>
     <h{{ headingLevel }}>{{ post.data.title }}</h{{ headingLevel }}>
     <p>
-      <time datetime="{{ post.data.date }}">{{ post.data.date | formatDate(locale) }}</time>
+      <time datetime="{{ post.data.date }}">{{ post.data.date | formatDate }}</time>
     </p>
     <a  href="{{ post.url }}">
       Lire l'actualité <span class="visually-hidden">"{{ post.data.title }}"</span>
