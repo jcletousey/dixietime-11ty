@@ -1,0 +1,12 @@
+{% extends "layouts/base.njk" %}
+{% import "partials/post-list.njk" as pl with context %}
+
+{% block content %}
+<div>
+  <h1>{{ title }}</h1>
+
+  {{ content | safe }}
+
+  {{ pl.postList(5) }}
+</div>
+{% endblock %}
