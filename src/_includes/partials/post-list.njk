@@ -1,0 +1,16 @@
+{% macro postList(number=3, headingLevel=2) %}
+  {% set postList = collections["posts"] | reverse %}
+  {% for post in postList %}
+  <article>
+    <h{{ headingLevel }}>{{ post.data.title }}</h{{ headingLevel }}>
+    <p>
+      <time datetime="{{ post.data.date }}">{{ post.data.date | formatDate(locale) }}</time>
+    </p>
+    <a  href="{{ post.url }}">
+      Lire l'actualité <span class="visually-hidden">"{{ post.data.title }}"</span>
+    </a>
+  </article>
+  {% else %}
+  <p>{{ blog[locale].noPost }}</p>
+  {% endfor %}
+{% endmacro %}

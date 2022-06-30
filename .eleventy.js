@@ -10,6 +10,21 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection(`pages`, function (collection) {
     return collection.getFilteredByGlob(`./src/content/pages/*.md`);
   });
+  eleventyConfig.addCollection(`posts`, function (collection) {
+    return collection.getFilteredByGlob(`./src/content/posts/*.md`);
+  });
+
+  // Filters
+  eleventyConfig.addFilter("formatDate", function (str, locale) {
+    const date = new Date(str);
+    const options = {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    };
+    return new Intl.DateTimeFormat(locale, options).format(date);
+  });
 
   // Assets
   eleventyConfig.addPassthroughCopy("./src/assets/images");
