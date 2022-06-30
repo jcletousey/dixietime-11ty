@@ -13,6 +13,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection(`posts`, function (collection) {
     return collection.getFilteredByGlob(`./src/content/posts/*.md`);
   });
+  eleventyConfig.addCollection(`events`, function (collection) {
+    return collection.getFilteredByGlob(`./src/content/events/*.md`);
+  });
 
   // Filters
   eleventyConfig.addFilter("formatDate", function (str) {
@@ -25,6 +28,16 @@ module.exports = function (eleventyConfig) {
     };
     return new Intl.DateTimeFormat("fr", options).format(date);
   });
+  eleventyConfig.addFilter("eventsFilter", function (collection, filter) {
+    console.log(filter);
+    const date = new Date();
+    if (filter == "past") {
+      return collection.filter((item) => new Date(item.data.start.date) < date);
+    } else if (filter == "coming") {
+      return collection.filter(
+        (item) => new Date(item.data.start.date) >= date
+      );
+    }
   });
 
   // Assets

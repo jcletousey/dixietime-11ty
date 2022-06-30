@@ -1,0 +1,16 @@
+{% macro eventList(number=10, headingLevel=2, filter="past") %}
+  {% set eventList = collections["events"] | eventsFilter(filter) %}
+  {% for event in eventList | reverse %}
+  <article>
+    <h{{ headingLevel }}>{{ event.data.title }}</h{{ headingLevel }}>
+    <p>{{ event.data.location }}</p>
+    <p>
+      <time datetime="{{ event.data.start.date }}">
+        Le {{ event.data.start.date | formatDate }}
+      </time>
+    </p>
+  </article>
+  {% else %}
+  <p>Il n'y a pas d'évènement pour le moment.</p>
+  {% endfor %}
+{% endmacro %}
