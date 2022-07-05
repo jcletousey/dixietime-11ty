@@ -30,14 +30,22 @@ module.exports = function (eleventyConfig) {
   });
   eleventyConfig.addFilter("eventsFilter", function (collection, filter) {
     console.log(filter);
+    let events = [];
     const date = new Date();
     if (filter == "past") {
-      return collection.filter((item) => new Date(item.data.start.date) < date);
+      events = collection.filter(
+        (item) => new Date(item.data.start.date) < date
+      );
     } else if (filter == "coming") {
-      return collection.filter(
+      events = collection.filter(
         (item) => new Date(item.data.start.date) >= date
       );
+    } else {
+      return events;
     }
+    return events.sort((a, b) =>
+      a.data.start.date >= b.data.start.date ? 1 : -1
+    );
   });
 
   // Assets
