@@ -1,0 +1,9 @@
+/* bevan-regular - latin */
+@font-face {
+  font-family: "riesling";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/riesling.ttf") format("truetype"),
+    url("../fonts/riesling.woff") format("woff"),
+    url("../fonts/riesling.woff2") format("woff2");
+}

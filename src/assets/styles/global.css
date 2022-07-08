@@ -8,3 +8,7 @@
   @apply border-white;
   @apply pb-1.5;
 }
+
+.flow > * + * {
+  @apply mt-3;
+}

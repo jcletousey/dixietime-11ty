@@ -3,6 +3,9 @@ module.exports = {
   content: ["./src/**/*.{njk,html,js}"],
   theme: {
     extend: {
+      fontFamily: {
+        special: ["riesling", "sans-serif"],
+      },
       backgroundImage: {
         logo: "url('../images/logo.svg')",
       },

@@ -1,7 +1,16 @@
 {% extends "layouts/base.njk" %}
 
 {% block content %}
-<article>
-  {{ content | safe }}
-</article>
+<div>
+  <h1 class="sr-only">Bienvenue sur le site de Dixie Time</h1>
+
+  <div>
+    <h2 class="font-special text-6xl mt-6 mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-amber-600 to-amber-900">
+      Qui sommes nous ?
+    </h2>
+    <div class="flow">
+      {{ content | safe }}
+    </div>
+  </div>
+</div>
 {% endblock %}
