@@ -1,8 +1,9 @@
 {% extends "layouts/base.njk" %}
+{% import "partials/macros.njk" as m with context %}
 
 {% block content %}
 <article>
-  <h1>{{ title }}</h1>
+  {{ m.title(title) }}
 
   {{ content | safe }}
 </article>
