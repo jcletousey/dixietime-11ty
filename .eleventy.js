@@ -49,8 +49,9 @@ module.exports = function (eleventyConfig) {
   });
 
   // Assets
-  eleventyConfig.addPassthroughCopy("./src/assets/images");
   eleventyConfig.addWatchTarget("./src/assets/styles/global.css");
+  eleventyConfig.addPassthroughCopy("./src/assets/images");
+  eleventyConfig.addPassthroughCopy("./src/favicon.ico");
   eleventyConfig.addPassthroughCopy({
     "./src/assets/styles/main.css": "./assets/css/main.css",
   });
