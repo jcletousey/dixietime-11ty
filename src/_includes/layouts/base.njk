@@ -8,10 +8,10 @@
   <link rel="icon" href="/favicon.ico" sizes="any">
   {% include "partials/meta.njk" %}
 </head>
-<body>
+<body class="h-screen box-border flex flex-col font-serif bg-slate-200">
   {% include "partials/header.njk" %}
 
-  <main>
+  <main class="xl:w-3/4 xl:mx-auto m-3 p-3 md:p-6 bg-white border border-slate-300">
     {% block content %}{% endblock %}
   </main>
 

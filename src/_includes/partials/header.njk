@@ -1,18 +1,20 @@
-<header>
-  <a href="/" aria-label="Aller à la page d'accueil">
-    {{ site.title }}
-  </a>
+<header class="bg-gradient-to-b from-amber-600 to-amber-800">
+  <div class="flex flex-col md:flex-row items-center md:justify-between md:w-11/12 md:mx-auto text-white">
+    <a href="/" aria-label="Aller à la page d'accueil">
+      {{ site.title }}
+    </a>
 
-  {%- set navPages = collections["pages"] | eleventyNavigation %}
-  {% if navPages.length > 0 %}
-  <nav>
-    <ul>
-    {% for entry in navPages %}
-      <li>
-        <a href="{{ entry.url | url }}">{{ entry.title }}</a>
-      </li>
-    {% endfor %}
-    </ul>
-  </nav>
-  {% endif -%}
+    {%- set navPages = collections["pages"] | eleventyNavigation %}
+    {% if navPages.length > 0 %}
+    <nav class="my-3 md:my-0 font-sans uppercase font-extralight">
+      <ul class="flex flex-wrap gap-x-6" role="list">
+      {% for entry in navPages %}
+        <li>
+          <a href="{{ entry.url | url }}">{{ entry.title }}</a>
+        </li>
+      {% endfor %}
+      </ul>
+    </nav>
+    {% endif -%}
+  </div>
 </header>
