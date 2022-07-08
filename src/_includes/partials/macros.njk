@@ -1,5 +1,24 @@
+{# TITLE MANAGEMENT #}
 {% macro title(title, headingLevel=1) %}
 <h{{ headingLevel }}  class="font-special text-6xl mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-amber-600 to-amber-900">
   {{ title }}
 </h{{ headingLevel }}>
+{% endmacro %}
+
+{# EVENT LIST #}
+{% macro eventList(number=10, headingLevel=2, filter="past") %}
+  {% set eventList = collections["events"] | eventsFilter(filter) %}
+  {% for event in eventList | reverse %}
+  <article>
+    <h{{ headingLevel }}>{{ event.data.title }}</h{{ headingLevel }}>
+    <p>{{ event.data.location }}</p>
+    <p>
+      <time datetime="{{ event.data.start.date }}">
+        Le {{ event.data.start.date | formatDate }}
+      </time>
+    </p>
+  </article>
+  {% else %}
+  <p>Il n'y a pas d'évènement pour le moment.</p>
+  {% endfor %}
 {% endmacro %}

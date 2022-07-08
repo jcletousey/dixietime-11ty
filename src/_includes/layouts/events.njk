@@ -1,5 +1,5 @@
 {% extends "layouts/base.njk" %}
-{% import "partials/event-list.njk" as el with context %}
+{% import "partials/macros.njk" as m with context %}
 
 {% block content %}
 <div>
@@ -8,9 +8,9 @@
   {{ content | safe }}
 
   <h2>À venir</h2>
-  {{ el.eventList(headingLevel=3, filter="coming") }}
+  {{ m.eventList(headingLevel=3, filter="coming") }}
 
   <h2>Passés</h2>
-  {{ el.eventList(headingLevel=3) }}
+  {{ m.eventList(headingLevel=3) }}
 </div>
 {% endblock %}
