@@ -4,17 +4,6 @@
       {{ site.title }}
     </a>
 
-    {%- set navPages = collections["pages"] | eleventyNavigation %}
-    {% if navPages.length > 0 %}
-    <nav class="my-3 md:my-0 font-sans uppercase font-extralight">
-      <ul class="flex flex-wrap gap-x-6" role="list">
-      {% for entry in navPages %}
-        <li>
-          <a href="{{ entry.url | url }}">{{ entry.title }}</a>
-        </li>
-      {% endfor %}
-      </ul>
-    </nav>
-    {% endif -%}
+    {% include "partials/navigation.njk" %}
   </div>
 </header>
