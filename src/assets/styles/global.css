@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+[aria-current="page"] {
+  @apply font-bold;
+  @apply border-b-2;
+  @apply border-white;
+  @apply pb-1.5;
+}
