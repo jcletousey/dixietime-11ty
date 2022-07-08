@@ -50,6 +50,7 @@ module.exports = function (eleventyConfig) {
 
   // Assets
   eleventyConfig.addWatchTarget("./src/assets/styles/global.css");
+  eleventyConfig.addWatchTarget("./tailwind.config.js");
   eleventyConfig.addPassthroughCopy("./src/assets/images");
   eleventyConfig.addPassthroughCopy("./src/favicon.ico");
   eleventyConfig.addPassthroughCopy({
