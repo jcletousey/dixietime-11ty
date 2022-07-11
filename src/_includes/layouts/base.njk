@@ -12,6 +12,10 @@
 <body class="h-screen box-border flex flex-col font-serif bg-slate-200">
   {% include "partials/header.njk" %}
 
+  {% if page.url == "/" %}
+  <img src="/assets/images/cover-1280.jpg" alt="" class="contrast-100 border-b-8 border-amber-600">
+  {% endif %}
+
   <main class="xl:w-3/4 xl:mx-auto m-3 p-3 md:p-6 bg-white border border-slate-300">
     {% block content %}{% endblock %}
   </main>
