@@ -5,12 +5,24 @@
 <div>
   <h1 class="sr-only">Bienvenue sur le site de Dixie Time</h1>
 
-  <div>
+  <div class="mb-16">
     {{ m.title("Qui sommes nous ?", 2) }}
 
     <div class="flow">
       {{ content | safe }}
     </div>
+  </div>
+
+  <div>
+    {{ m.title("Prochains évènements", 2) }}
+
+    <div class="mb-6">
+      {{ m.eventList(filter="coming") }}
+    </div>
+
+    <a href="/evenements/" class="block w-fit mx-auto text-amber-900 font-semibold underline">
+      Voir nos évènements passés
+    </a>
   </div>
 </div>
 {% endblock %}
