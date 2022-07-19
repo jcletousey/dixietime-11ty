@@ -4,10 +4,11 @@
   "description": "Dixie Time's website",
   "main": "index.js",
   "scripts": {
-    "tailwind:process": "npx postcss src/assets/styles/global.css --o src/assets/styles/main.css --watch",
+    "tailwind:process": "npx postcss src/assets/styles/global.css --o src/assets/styles/main.css",
+    "tailwind:serve": "npx postcss src/assets/styles/global.css --o src/assets/styles/main.css --watch",
     "serve": "npx @11ty/eleventy --serve",
-    "start": "concurrently \"npm run tailwind:process\" \"npm run serve\"",
-    "build": "npx @11ty/eleventy",
+    "start": "concurrently \"npm run tailwind:serve\" \"npm run serve\"",
+    "build": "npm run tailwind:process && npx @11ty/eleventy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
