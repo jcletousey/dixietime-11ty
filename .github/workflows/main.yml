@@ -1,7 +1,7 @@
 name: Deploy
 on:
   push:
-    branches: ["develop"]
+    branches: ["main"]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -19,3 +19,5 @@ jobs:
           ftp_password: ${{ secrets.FTP_PASSWORD }}
           local_source_dir: "dist"
           dist_target_dir: "dist"
+          delete: "true"
+          only_newer: "true"
