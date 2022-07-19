@@ -13,7 +13,18 @@
   {% include "partials/header.njk" %}
 
   {% if page.url == "/" %}
-  <img src="/assets/images/cover-1280.jpg" alt="" class="contrast-100 border-b-8 border-amber-600">
+  <img
+      alt="Les six membres de Dixie Time, posant les un à côté des autres avec leurs instruments, dans une salle devant un mur"
+      class="contrast-100 border-b-8 border-amber-600"
+      src="/assets/images/cover.jpg"
+      srcset="
+        /assets/images/cover-320.jpg   320w,
+        /assets/images/cover-640.jpg   640w,
+        /assets/images/cover-960.jpg   960w,
+        /assets/images/cover-1280.jpg 1280w,
+        /assets/images/cover-1600.jpg 1600w
+      "
+    />
   {% endif %}
 
   <main class="xl:w-3/4 xl:mx-auto m-3 p-3 md:p-6 bg-white border border-slate-300">
