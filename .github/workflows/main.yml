@@ -1,0 +1,22 @@
+name: Deploy
+on:
+  push:
+    branches: ["develop"]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install NPM packages
+        run: npm install
+      - name: Build website
+        run: npm run build
+      - name: FTP Deploy
+        uses: kevinpainchaud/simple-ftp-deploy-action@v1.2.1
+        with:
+          ftp_host: ${{ secrets.FTP_HOST }}
+          ftp_username: ${{ secrets.FTP_USERNAME }}
+          ftp_password: ${{ secrets.FTP_PASSWORD }}
+          local_source_dir: "dist"
+          dist_target_dir: "dist"
+          other_flags: "--dry-run"
