@@ -19,4 +19,3 @@ jobs:
           ftp_password: ${{ secrets.FTP_PASSWORD }}
           local_source_dir: "dist"
           dist_target_dir: "dist"
-          other_flags: "--dry-run"
