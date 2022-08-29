@@ -1,7 +1,11 @@
 {# TITLE MANAGEMENT #}
-{% macro title(title, headingLevel=1) %}
-<h{{ headingLevel }}  class="font-special text-6xl mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-amber-600 to-amber-900">
-  {{ title }}
+{% macro title(title, headingLevel=1, nbspFilter=true) %}
+<h{{ headingLevel }} class="font-special text-6xl mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-amber-600 to-amber-900">
+  {% if nbspFilter %}
+    {{ title | addNbsp | safe }}
+  {% else %}
+    {{ title }}
+  {% endif %}
 </h{{ headingLevel }}>
 {% endmacro %}
 
