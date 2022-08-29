@@ -1,5 +1,4 @@
 {% extends "layouts/base.njk" %}
-{% import "partials/post-list.njk" as pl with context %}
 {% import "partials/macros.njk" as m with context %}
 
 {% block content %}
@@ -8,6 +7,6 @@
 
   {{ content | safe }}
 
-  {{ pl.postList(5) }}
+  {{ m.postList(5) }}
 </div>
 {% endblock %}

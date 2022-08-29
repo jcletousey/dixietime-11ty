@@ -5,6 +5,24 @@
 </h{{ headingLevel }}>
 {% endmacro %}
 
+{# POST LIST #}
+{% macro postList(number=3, headingLevel=2) %}
+  {% set postList = collections["posts"] | reverse %}
+  {% for post in postList %}
+  <article>
+    <h{{ headingLevel }}>{{ post.data.title }}</h{{ headingLevel }}>
+    <p>
+      <time datetime="{{ post.data.date }}">{{ post.data.date | formatDate }}</time>
+    </p>
+    <a  href="{{ post.url }}" class="text-amber-900 hover:text-amber-600 underline">
+      Lire l'actualité <span class="visually-hidden">"{{ post.data.title }}"</span>
+    </a>
+  </article>
+  {% else %}
+  <p>Il n'y a pas d'article pour le moment</p>
+  {% endfor %}
+{% endmacro %}
+
 {# EVENT LIST #}
 {% macro eventList(number=10, headingLevel=2, filter="past") %}
   {% set eventList = collections["events"] | eventsFilter(filter) %}
