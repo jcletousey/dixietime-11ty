@@ -37,7 +37,6 @@ module.exports = function (eleventyConfig) {
     return new Intl.DateTimeFormat("fr", options).format(date);
   });
   eleventyConfig.addFilter("eventsFilter", function (collection, filter) {
-    console.log(filter);
     let events = [];
     const date = new Date();
     if (filter == "past") {
