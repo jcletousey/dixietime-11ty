@@ -57,3 +57,12 @@
   {% endfor %}
 </ul>
 {% endmacro %}
+
+{# FIGURE #}
+{% macro figure(file, alt, caption) %}
+<figure class="w-fit p-1 shadow-lg border border-gray-300">
+  <img src="/assets/images/{{ file }}"
+        alt="{{ alt }}">
+  <figcaption class="p-2 bg-slate-800 text-center text-white italic">{{ caption }}</figcaption>
+</figure>
+{% endmacro %}

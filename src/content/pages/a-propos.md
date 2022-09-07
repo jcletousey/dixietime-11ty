@@ -33,5 +33,5 @@ Nous sommes disponibles pour des représentations publiques et privées. Vous po
 
 Voici quelques photos issues d'évènements auxquels nous avons participés.
 
-![](/assets/images/tessy-sur-vire.jpg) Tessy-sur-Vire - 10 septembre 2016
-![](/assets/images/villedieu.jpg) Villedieu - 6 avril 2018
+{{ macros.figure("tessy-sur-vire.jpg", "Les six musiciens en train de jouer en extérieur à Tessy-Sur-Vire", "Tessy-sur-Vire - 10 septembre 2016") }}
+{{ macros.figure("villedieu.jpg", "Frédéric au premier plan, Jean au second et Josselin au fond, en train de jouer", "Villedieu - 6 avril 2018") }}
