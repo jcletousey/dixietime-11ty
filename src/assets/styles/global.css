@@ -22,3 +22,8 @@
   @apply border;
   @apply border-gray-200;
 }
+
+.mask-divider::after {
+  -webkit-mask: url("../images/divider.svg") no-repeat 50% 50%;
+  mask: url("../images/divider.svg") no-repeat 50% 50%;
+}

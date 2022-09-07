@@ -5,16 +5,16 @@
 <div>
   <h1 class="sr-only">Bienvenue sur le site de Dixie Time</h1>
 
-  <div class="mb-16">
-    {{ m.title("Qui sommes nous ?", 2) }}
+  <div class="mb-16 after:block after:h-10 after:mt-16 after:bg-contain after:bg-center after:bg-amber-900 mask-divider">
+    {{ m.title("Qui sommes nous ?", 2, ornament=false) }}
 
     <div class="flow">
       {{ content | safe }}
     </div>
   </div>
 
-  <div class="mb-16">
-    {{ m.title("Prochains évènements", 2, false) }}
+  <div class="mb-16 after:block after:h-10 after:mt-16 after:bg-contain after:bg-center after:bg-amber-900 mask-divider">
+    {{ m.title("Prochains évènements", 2, false, false) }}
 
     <div class="mb-6">
       {{ m.eventList(filter="coming") }}

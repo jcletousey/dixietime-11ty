@@ -8,6 +8,7 @@ module.exports = {
       },
       backgroundImage: {
         logo: "url('../images/logo.svg')",
+        divider: "url('../images/divider.svg')",
       },
       spacing: {
         minus9999: "-9999px",
