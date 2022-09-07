@@ -1,17 +1,33 @@
 ---
 title: A propos
+templateEngineOverride: njk, md
+musicians:
+  - name: Yves
+    img: tete-yves-151x160.jpg
+    instrument: Bugle
+  - name: Frédéric
+    img: tete-frederic-150x150.jpg
+    instrument: Trompette
+  - name: Jean
+    img: tete-jean-150x150.jpg
+    instrument: Trombonne
+  - name: Josselin
+    img: tete-josselin-150x150.png
+    instrument: Batterie
+  - name: Benjamin
+    img: tete-benjamin-146x150.png
+    instrument: Guitare
+  - name: Gilbert
+    img: tete-gilbert-150x150.jpg
+    instrument: Soubassophone
 eleventyNavigation:
   key: A propos
 ---
 
 L'orchestre **Dixie Time** est un groupe de six musiciens amateurs qui jouent dans le style "jazz Nouvelle-Orleans".
 
-- ![](/assets/images/tete-yves-151x160.jpg) Yves Bugle
-- ![](/assets/images/tete-frederic-150x150.jpg) Frédéric Trompette
-- ![](/assets/images/tete-jean-150x150.jpg) Jean Trombonne
-- ![](/assets/images/tete-josselin-150x150.png) Josselin Batterie
-- ![](/assets/images/tete-benjamin-146x150.png) Benjamin Guitare
-- ![](/assets/images/tete-gilbert-150x150.jpg) Gilbert Soubassophone
+{% import "partials/macros.njk" as macros %}
+{{ macros.musicianList(musicians) }}
 
 Nous sommes disponibles pour des représentations publiques et privées. Vous pouvez [nous contacter](/nous-contacter/) pour toute demande d'informations.
 

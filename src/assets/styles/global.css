@@ -12,3 +12,13 @@
 .flow > * + * {
   @apply mt-3;
 }
+
+.photo {
+  @apply inline-block;
+  @apply bg-white;
+  @apply shadow-lg;
+  @apply p-3;
+  @apply pb-6;
+  @apply border;
+  @apply border-gray-200;
+}

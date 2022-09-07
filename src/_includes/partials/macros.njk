@@ -44,3 +44,16 @@
   <p class="text-center">Il n'y a pas d'évènement pour le moment.</p>
   {% endfor %}
 {% endmacro %}
+
+{# MUSICIANS LIST #}
+{% macro musicianList(musicians) %}
+<ul class="grid grid-cols-2 gap-y-6 md:grid-cols-3 my-8">
+  {% for musician in musicians %}
+  <li class="text-center text-slate-600">
+    <img src="/assets/images/{{ musician.img }}" class="photo" alt="">
+    <div class="mt-4 text-lg font-semibold after:block after:w-1/6 after:mx-auto after:border-b after:border-amber-600">{{ musician.name }}</div>
+    <div>{{ musician.instrument }}</div>
+  </li>
+  {% endfor %}
+</ul>
+{% endmacro %}
