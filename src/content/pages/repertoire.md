@@ -3,6 +3,7 @@ title: Répertoire
 layout: repertoire
 eleventyNavigation:
   key: Répertoire
+  order: 5
 repertoire:
   - Alexander Ragtime Band
   - All Of Me

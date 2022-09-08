@@ -4,6 +4,7 @@ title: Accueil
 permalink: /
 eleventyNavigation:
   key: Accueil
+  order: 1
 ---
 
 **DIXIE TIME** joue le jazz traditionnel de la Nouvelle Orléans.

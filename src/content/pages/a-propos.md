@@ -22,6 +22,7 @@ musicians:
     instrument: Soubassophone
 eleventyNavigation:
   key: A propos
+  order: 2
 ---
 
 L'orchestre **Dixie Time** est un groupe de six musiciens amateurs qui jouent dans le style "jazz Nouvelle-Orleans".
