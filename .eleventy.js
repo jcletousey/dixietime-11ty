@@ -59,11 +59,14 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget("./src/assets/styles/global.css");
   eleventyConfig.addWatchTarget("./tailwind.config.js");
   eleventyConfig.addPassthroughCopy("./src/favicon.ico");
+  eleventyConfig.addPassthroughCopy("./src/assets/js");
   eleventyConfig.addPassthroughCopy("./src/assets/images");
   eleventyConfig.addPassthroughCopy("./src/assets/fonts");
+  eleventyConfig.addPassthroughCopy("./src/assets/sounds");
   eleventyConfig.addPassthroughCopy({
     "./src/assets/styles/main.css": "./assets/css/main.css",
     "./src/assets/styles/fonts.css": "./assets/css/fonts.css",
+    "./src/assets/styles/player.css": "./assets/css/player.css",
   });
 
   return {

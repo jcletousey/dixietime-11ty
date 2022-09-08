@@ -1,0 +1,31 @@
+<div class="player">
+    <div class="title"></div>
+    <div class="artist"></div>
+    <div class="cover"></div>
+    <div class="controls">
+        <div class="play"></div>
+        <div class="pause"></div>
+        <div class="rew"></div>
+        <div class="fwd"></div>
+    </div>
+    <div class="volume"></div>
+    <div class="tracker"></div>
+</div>
+<ul class="playlist">
+    {% set tracks = [
+      {name: "Down By The Riverside", file: "Down-by-the-riverside.mp3"},
+      {name: "Hello Dolly", file: "Hello-Dolly.mp3"},
+      {name: "Royal Garden Blues", file: "Royal-Garden-Blues.mp3"},
+      {name: "Saint-James Infirmary", file: "Saint-James-Infirmary.mp3"},
+      {name: "Tiger Rag", file: "Tiger-Rag.mp3"}
+    ] %}
+    {% for t in tracks %}
+    <li audiourl="{{ t.file }}" cover="" artist="">{{ t.name }}</li>
+    {% endfor %}
+</ul>
+
+<link rel="stylesheet" href="/assets/css/player.css">
+
+<script src="/assets/js/jquery-1.7.2.min.js"></script>
+<script src="/assets/js/jquery-ui-1.8.21.custom.min.js"></script>
+<script src="/assets/js/player.js"></script>

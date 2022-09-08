@@ -24,5 +24,17 @@
       Voir nos évènements passés
     </a>
   </div>
+
+  <div class="mb-16 after:block after:h-10 after:mt-16 after:bg-contain after:bg-center after:bg-amber-900 mask-divider">
+    {{ m.title("Nous écouter", 2, false, false) }}
+
+    <div class="mb-6 w-fit mx-auto">
+      {% include "partials/player.njk" %}
+    </div>
+
+    <a href="/repertoire/" class="block w-fit mx-auto text-amber-900 font-semibold underline">
+      Consulter notre répertoire
+    </a>
+  </div>
 </div>
 {% endblock %}
