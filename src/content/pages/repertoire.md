@@ -4,6 +4,7 @@ layout: repertoire
 eleventyNavigation:
   key: Répertoire
   order: 5
+templateEngineOverride: njk, md
 repertoire:
   - Alexander Ragtime Band
   - All Of Me
@@ -33,3 +34,7 @@ repertoire:
 ---
 
 **Dixie Time** joue le Jazz de la "Nouvelle Orleans". Vous pouvez en retrouver certains classiques dans notre répertoire.
+
+<div class="mb-6 w-fit mx-auto">
+  {% include "partials/player.njk" %}
+</div>
