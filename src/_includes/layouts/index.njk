@@ -2,7 +2,20 @@
 {% import "partials/macros.njk" as m with context %}
 
 {% block content %}
-<div>
+<img
+      alt="Les six membres de Dixie Time, posant les un à côté des autres avec leurs instruments, dans une salle devant un mur"
+      class="contrast-100 border-b-8 border-amber-600"
+      src="/assets/images/cover.jpg"
+      srcset="
+        /assets/images/cover-320.jpg   320w,
+        /assets/images/cover-640.jpg   640w,
+        /assets/images/cover-960.jpg   960w,
+        /assets/images/cover-1280.jpg 1280w,
+        /assets/images/cover-1600.jpg 1600w
+      "
+    />
+
+<main class="xl:mx-auto md:w-3/4 m-3 p-3 md:p-6 bg-white border border-slate-300">
   <h1 class="sr-only">Bienvenue sur le site de Dixie Time</h1>
 
   <div class="mb-16 after:block after:h-10 after:mt-16 after:bg-contain after:bg-center after:bg-amber-900 mask-divider">
@@ -36,5 +49,5 @@
       Consulter notre répertoire
     </a>
   </div>
-</div>
+</main>
 {% endblock %}
