@@ -7,6 +7,10 @@
 
   {{ content | safe }}
 
+  <div class="mb-6 w-fit mx-auto">
+    {% include "partials/player.njk" %}
+  </div>
+
   <ul class="divide-y">
     {% for item in repertoire %}
     <li class="py-2 before:content-['\00266a'] before:inline-block before:w-6">
