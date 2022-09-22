@@ -60,9 +60,9 @@
 
 {# FIGURE #}
 {% macro figure(file, alt, caption) %}
-<figure class="w-fit p-1 shadow-lg border border-gray-300">
+<figure class="mx-auto w-fit p-1 shadow-lg border border-gray-300">
   <img src="/assets/images/{{ file }}"
         alt="{{ alt }}">
-  <figcaption class="p-2 bg-slate-800 text-center text-white italic">{{ caption }}</figcaption>
+  <figcaption class="p-2 bg-gray-900 text-center text-white italic">{{ caption }}</figcaption>
 </figure>
 {% endmacro %}
