@@ -1,12 +1,8 @@
 {% extends "layouts/page.njk" %}
 {% import "partials/macros.njk" as m with context %}
 
-{% block pageContent %}
-<div>
-  {{ m.title(title) }}
-
-  {{ content | safe }}
-
+{% block pageSubContent %}
+<div class="mt-12">
   {{ m.postList(5) }}
 </div>
 {% endblock %}

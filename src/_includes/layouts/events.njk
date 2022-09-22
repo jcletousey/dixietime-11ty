@@ -1,12 +1,8 @@
 {% extends "layouts/page.njk" %}
 {% import "partials/macros.njk" as m with context %}
 
-{% block pageContent %}
-<div>
-  {{ m.title(title) }}
-
-  {{ content | safe }}
-
+{% block pageSubContent %}
+<div class="mt-12">
   <h2>À venir</h2>
   {{ m.eventList(headingLevel=3, filter="coming") }}
 

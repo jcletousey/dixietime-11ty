@@ -5,13 +5,13 @@
 <div class="md:flex xl:w-11/12 md:mx-auto">
   <main class="xl:mx-auto m-3 p-3 md:p-6 bg-white border border-slate-300 md:w-2/3">
   {% block pageContent %}
-    <article>
-      {{ m.title(title) }}
+    {{ m.title(title) }}
 
-      <div class="flow">
-        {{ content | safe }}
-      </div>
-    </article>
+    <div class="flow">
+      {{ content | safe }}
+    </div>
+
+    {% block pageSubContent %}{% endblock %}
   {% endblock %}
   </main>
 

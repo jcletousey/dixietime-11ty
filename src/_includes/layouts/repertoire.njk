@@ -1,12 +1,8 @@
 {% extends "layouts/page.njk" %}
 {% import "partials/macros.njk" as m with context %}
 
-{% block pageContent %}
-<div>
-  {{ m.title(title) }}
-
-  {{ content | safe }}
-
+{% block pageSubContent %}
+<div class="mt-12">
   <div class="mb-6 w-fit mx-auto">
     {% include "partials/player.njk" %}
   </div>
