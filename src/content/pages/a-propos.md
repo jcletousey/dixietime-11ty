@@ -35,4 +35,9 @@ Nous sommes disponibles pour des représentations publiques et privées. Vous po
 Voici quelques photos issues d'évènements auxquels nous avons participés.
 
 {{ macros.figure("tessy-sur-vire.jpg", "Les six musiciens en train de jouer en extérieur à Tessy-Sur-Vire", "Tessy-sur-Vire - 10 septembre 2016") }}
+
 {{ macros.figure("villedieu.jpg", "Frédéric au premier plan, Jean au second et Josselin au fond, en train de jouer", "Villedieu - 6 avril 2018") }}
+
+{{ macros.figure("la_cahute_2.jpg", "Le groupe, vu de devant, en train de jouer en extérieur sur le sable", "La Cahute - 21 septembre 2021") }}
+
+{{ macros.figure("la_cahute_1.jpg", "Le groupe, vu de côté, en train de jouer en extérieur devant La Cahute, sur le sable et au milieu du public installé autour de tables", "La Cahute - 21 septembre 2021") }}
