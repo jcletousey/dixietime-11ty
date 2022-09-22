@@ -7,9 +7,11 @@
 
   {{ content | safe }}
 
-  <ul>
+  <ul class="divide-y">
     {% for item in repertoire %}
-    <li>{{ item }}</li>
+    <li class="py-2 before:content-['\00266a'] before:inline-block before:w-6">
+      {{ item }}
+    </li>
     {% endfor %}
   </ul>
 </div>
