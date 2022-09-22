@@ -17,10 +17,12 @@
 
   {% if page.url != "/" %}
   <aside class="md:w-1/3 p-3">
+    {% if page.url != "/evenements/" %}
     <div class="mb-3 p-3 bg-white border border-slate-300">
       <h2>Évènements</h2>
       <a href="/evenements/">Consulter nos évènements</a>
     </div>
+    {% endif %}
 
     {% if page.url != "/repertoire/" %}
     <div class="mb-3 p-3 bg-white border border-slate-300">
