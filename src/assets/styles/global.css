@@ -4,9 +4,10 @@
 
 [aria-current="page"] {
   @apply font-bold;
-  @apply border-b-2;
-  @apply border-white;
-  @apply pb-1.5;
+  @apply bg-white;
+  @apply p-2;
+  @apply text-amber-900;
+  @apply rounded-sm;
 }
 
 .flow > * + * {
