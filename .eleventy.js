@@ -40,8 +40,7 @@ module.exports = function (eleventyConfig) {
     return new Intl.DateTimeFormat("fr", options).format(date);
   });
   eleventyConfig.addFilter("formatShortDate", function (str) {
-    const date = new Date(str).toLocaleDateString();
-    //return new Intl.DateTimeFormat("fr", options).format(date);
+    const date = new Date(str).toLocaleDateString("fr");
     return date;
   });
   eleventyConfig.addFilter("eventsFilter", function (collection, filter) {
