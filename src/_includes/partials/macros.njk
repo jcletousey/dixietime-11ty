@@ -1,6 +1,6 @@
 {# TITLE MANAGEMENT #}
-{% macro title(title, headingLevel=1, nbspFilter=true, ornament=true) %}
-<h{{ headingLevel }} class="font-special text-6xl mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-amber-600 to-amber-900 {% if ornament == true %}after:block after:h-8 after:mt-1 after:bg-contain after:bg-center after:bg-amber-900 mask-divider{% endif %}">
+{% macro title(title, headingLevel=1, nbspFilter=true) %}
+<h{{ headingLevel }} class="font-special text-6xl mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-amber-600 to-amber-900 after:block after:h-8 after:mt-1 after:bg-contain after:bg-center after:bg-amber-900 mask-divider">
   {% if nbspFilter %}
     {{ title | addNbsp | safe }}
   {% else %}
