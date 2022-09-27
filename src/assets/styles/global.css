@@ -28,3 +28,7 @@
   -webkit-mask: url("../images/divider.svg") no-repeat 50% 50%;
   mask: url("../images/divider.svg") no-repeat 50% 50%;
 }
+
+.index-events > .event-empty-list {
+  @apply text-center;
+}

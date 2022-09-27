@@ -18,13 +18,16 @@ module.exports = function (eleventyConfig) {
   });
 
   // Filters
-  eleventyConfig.addFilter("addNbsp", (str) => {
+  eleventyConfig.addFilter("addNbsp", function (str) {
     if (!str) {
       return;
     }
     let title = str.replace(/((.*)\s(.*))$/g, "$2&nbsp;$3");
     title = title.replace(/"(.*)"/g, '\\"$1\\"');
     return title;
+  });
+  eleventyConfig.addFilter("addBr", function (str) {
+    return str.replace(/((.*)\s-\s(.*))$/g, "$2<br>$3");
   });
   eleventyConfig.addFilter("formatDate", function (str) {
     const date = new Date(str);
@@ -35,6 +38,11 @@ module.exports = function (eleventyConfig) {
       day: "numeric",
     };
     return new Intl.DateTimeFormat("fr", options).format(date);
+  });
+  eleventyConfig.addFilter("formatShortDate", function (str) {
+    const date = new Date(str).toLocaleDateString();
+    //return new Intl.DateTimeFormat("fr", options).format(date);
+    return date;
   });
   eleventyConfig.addFilter("eventsFilter", function (collection, filter) {
     let events = [];

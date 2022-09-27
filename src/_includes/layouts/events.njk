@@ -3,10 +3,14 @@
 
 {% block pageSubContent %}
 <div class="mt-12">
-  <h2>À venir</h2>
-  {{ m.eventList(headingLevel=3, filter="coming") }}
+  <div class="mb-12">
+    <h2 class="mb-2 text-2xl text-amber-900">À venir</h2>
+    {{ m.eventList(headingLevel=3, filter="coming", shortdate=true) }}
+  </div>
 
-  <h2>Passés</h2>
-  {{ m.eventList(headingLevel=3) }}
+  <div>
+    <h2 class="mb-2 text-2xl font-light text-amber-900">Passés</h2>
+    {{ m.eventList(headingLevel=3, shortdate=true) }}
+  </div>
 </div>
 {% endblock %}

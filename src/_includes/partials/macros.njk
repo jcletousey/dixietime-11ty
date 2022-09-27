@@ -28,20 +28,24 @@
 {% endmacro %}
 
 {# EVENT LIST #}
-{% macro eventList(number=10, headingLevel=2, filter="past") %}
+{% macro eventList(number=10, headingLevel=2, filter="past", shortdate=false) %}
   {% set eventList = collections["events"] | eventsFilter(filter) %}
   {% for event in eventList | reverse %}
-  <article>
-    <h{{ headingLevel }}>{{ event.data.title }}</h{{ headingLevel }}>
-    <p>{{ event.data.location }}</p>
+  <article class="flex p-2 justify-between odd:bg-gray-100">
+    <h{{ headingLevel }} class="w-1/2">{{ event.data.title }}</h{{ headingLevel }}>
+    <p class="w-1/3">{{ event.data.location | addBr | safe }}</p>
     <p>
       <time datetime="{{ event.data.start.date }}">
+      {% if shortdate %}
+        {{ event.data.start.date | formatShortDate }}
+      {% else %}
         Le {{ event.data.start.date | formatDate }}
+      {% endif %}
       </time>
     </p>
   </article>
   {% else %}
-  <p class="text-center">Il n'y a pas d'évènement pour le moment.</p>
+  <p class="event-empty-list">Il n'y a pas d'évènement pour le moment.</p>
   {% endfor %}
 {% endmacro %}
 
