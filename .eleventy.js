@@ -61,6 +61,10 @@ module.exports = function (eleventyConfig) {
       a.data.start.date >= b.data.start.date ? 1 : -1
     );
   });
+  eleventyConfig.addFilter("excerpt", (post) => {
+    const content = post.replace(/(<([^>]+)>)/gi, "");
+    return content.substr(0, content.lastIndexOf(" ", 200)) + "...";
+  });
 
   // Assets
   eleventyConfig.addWatchTarget("./src/assets/styles/global.css");

@@ -49,5 +49,13 @@
       Consulter notre répertoire
     </a>
   </div>
+
+  <div class="py-16 px-4 border border-slate-300">
+    {{ m.title("Notre actualité", 2, false) }}
+
+    <div class="divide-y">
+      {{ m.postList(5) }}
+    </div>
+  </div>
 </main>
 {% endblock %}

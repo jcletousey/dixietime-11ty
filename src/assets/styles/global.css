@@ -14,6 +14,15 @@
   @apply mt-3;
 }
 
+main a {
+  @apply text-amber-900;
+  @apply underline;
+}
+
+main a:hover {
+  @apply no-underline;
+}
+
 .photo {
   @apply inline-block;
   @apply bg-white;

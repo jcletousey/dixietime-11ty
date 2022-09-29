@@ -13,14 +13,20 @@
 {% macro postList(number=3, headingLevel=2) %}
   {% set postList = collections["posts"] | reverse %}
   {% for post in postList %}
-  <article>
-    <h{{ headingLevel }}>{{ post.data.title }}</h{{ headingLevel }}>
-    <p>
+  <article class="py-8 last:pb-0 flex flex-wrap justify-between items-end">
+    <h{{ headingLevel }} class="text-xl">
+      <a href="{{ post.url }}" class="text-amber-900">{{ post.data.title }}</a>
+    </h{{ headingLevel }}>
+    <p class="text-gray-700">
       <time datetime="{{ post.data.date }}">{{ post.data.date | formatDate }}</time>
     </p>
-    <a href="{{ post.url }}" class="text-amber-900 hover:text-amber-600 underline">
-      Lire l'actualité <span class="visually-hidden">"{{ post.data.title }}"</span>
-    </a>
+    <p class="mt-2 grow shrink-0 basis-full">{{ post.templateContent | excerpt | safe }}</p>
+    <p class="mt-2 text-gray-700">
+      Tags:
+    {% for tag in post.data.tags %}
+      <span>{{ tag }}</span>
+    {% endfor %}
+    </p>
   </article>
   {% else %}
   <p>Il n'y a pas d'article pour le moment</p>
