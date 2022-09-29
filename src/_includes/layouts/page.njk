@@ -18,15 +18,20 @@
   {% if page.url != "/" %}
   <aside class="md:w-1/3 p-3">
     {% if page.url != "/evenements/" %}
-    <div class="mb-3 p-3 bg-white border border-slate-300">
-      <h2>Évènements</h2>
-      <a href="/evenements/">Consulter nos évènements</a>
+    <div class="mb-3 p-3 bg-white border border-slate-300 border-t-4 border-t-amber-600 rounded-t-sm">
+      <h2 class="w-fit mx-auto border-b border-b-amber-600 mb-6 text-2xl font-light text-amber-700 text-center">Évènements</h2>
+      
+      <p class="mb-6 text-center">Il n'y a pas d'évènement à venir</p>
+
+      <a href="/evenements/" class="block w-fit mx-auto text-amber-700 font-semibold underline">
+        Consulter nos évènements passés
+      </a>
     </div>
     {% endif %}
 
     {% if page.url != "/repertoire/" %}
-    <div class="mb-3 p-3 bg-white border border-slate-300">
-      <h2>Audio</h2>
+    <div class="mb-3 p-3 bg-white border border-slate-300 border-t-4 border-t-amber-600 rounded-t-sm">
+      <h2 class="w-fit mx-auto border-b border-b-amber-600 mb-6 text-2xl font-light text-amber-700 text-center">Audio</h2>
 
       <div class="mb-6 w-fit mx-auto">
         {% include "partials/player.njk" %}
@@ -38,10 +43,10 @@
     </div>
     {% endif %}
 
-    <div class="p-3 bg-white border border-slate-300">
-      <h2>Archives</h2>
+    <div class="p-3 bg-white border border-slate-300 border-t-4 border-t-amber-600 rounded-t-sm">
+      <h2 class="w-fit mx-auto border-b border-b-amber-600 mb-6 text-2xl font-light text-amber-700 text-center">Archives</h2>
 
-      <p>Il n'y a pas d'archives pour le moment</p>
+      <p class="text-center">Il n'y a pas d'archives pour le moment</p>
     </div>
   </aside>
   {% endif %}

@@ -29,7 +29,7 @@
 }
 
 main a {
-  @apply text-amber-900;
+  @apply text-amber-700;
   @apply underline;
 }
 

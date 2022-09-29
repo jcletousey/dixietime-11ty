@@ -15,7 +15,7 @@
   {% for post in postList %}
   <article class="py-8 last:pb-0 flex flex-wrap justify-between items-end">
     <h{{ headingLevel }} class="text-xl">
-      <a href="{{ post.url }}" class="text-amber-900">{{ post.data.title }}</a>
+      <a href="{{ post.url }}" class="text-amber-700">{{ post.data.title }}</a>
     </h{{ headingLevel }}>
     <p class="text-gray-700">
       <time datetime="{{ post.data.date }}">{{ post.data.date | formatDate }}</time>
@@ -51,7 +51,7 @@
     </p>
   </article>
   {% else %}
-  <p class="event-empty-list">Il n'y a pas d'évènement pour le moment.</p>
+  <p class="event-empty-list">Il n'y a pas d'évènement à venir</p>
   {% endfor %}
 {% endmacro %}
 
