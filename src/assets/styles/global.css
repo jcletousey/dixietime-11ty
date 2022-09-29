@@ -5,7 +5,6 @@
 [aria-current="page"] {
   @apply font-bold;
   @apply bg-white;
-  @apply p-2;
   @apply text-amber-900;
   @apply rounded-sm;
 }
