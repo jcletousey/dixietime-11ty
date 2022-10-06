@@ -22,5 +22,24 @@
   <div class="flow">
     {{ content | safe}}
   </div>
+
+  <footer class="mt-12">
+    <nav class="flex flex-wrap">
+      {%- set previousPost = collections.posts | getPreviousCollectionItem(page) %}
+      {%- if previousPost %}
+      <div class="grow shrink-0 basis-1/2">
+        <span class="block text-sm">← Précédent:</span>
+        <a class="text-xl" href="{{ previousPost.url }}">{{ previousPost.data.title }}</a>
+      </div>
+      {% endif %}
+      {%- set nextPost = collections.posts | getNextCollectionItem(page) %}
+      {%- if nextPost %}
+      <div class="grow shrink-0 basis-1/2 text-right">
+        <span class="block text-sm">Suivant: →</span>
+        <a class="text-xl" href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>
+      </div>
+      {% endif %}
+    </nav>
+  </footer>
 </article>
 {% endblock %}
