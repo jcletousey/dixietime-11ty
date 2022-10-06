@@ -1,14 +1,26 @@
 {% extends "layouts/page.njk" %}
+{% import "partials/macros.njk" as m with context %}
 
 {% block pageContent %}
 <article>
   <header>
-    <h1>{{ title }}</h1>
-    <p>
-      Publié le <time datetime="{{ date }}">{{ date | formatDate }}</time>
-    </p>
+    {{ m.title(title) }}
+
+    <div class="mb-12 text-center text-sm text-gray-700">
+      <p>
+        <span class="font-semibold">Publié le:</span>
+        <time datetime="{{ date }}">{{ date | formatDate }}</time>
+      </p>
+      <p>
+        <span class="font-semibold">Tags:</span> {% for tag in tags %}
+        <span>{{ tag }}</span>
+        {% endfor %}
+      </p>
+    </div>
   </header>
 
-  {{ content | safe}}
+  <div class="flow">
+    {{ content | safe}}
+  </div>
 </article>
 {% endblock %}
