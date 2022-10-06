@@ -17,11 +17,11 @@
     <h{{ headingLevel }} class="text-xl">
       <a href="{{ post.url }}" class="text-amber-700">{{ post.data.title }}</a>
     </h{{ headingLevel }}>
-    <p class="text-gray-700">
+    <p class="text-sm text-gray-700">
       <time datetime="{{ post.data.date }}">{{ post.data.date | formatDate }}</time>
     </p>
     <p class="mt-2 grow shrink-0 basis-full">{{ post.templateContent | excerpt | safe }}</p>
-    <p class="mt-2 text-gray-700">
+    <p class="mt-2 text-sm text-gray-700">
       Tags:
     {% for tag in post.data.tags %}
       <span>{{ tag }}</span>
