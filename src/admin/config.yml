@@ -1,0 +1,96 @@
+backend:
+  name: git-gateway
+
+# when using the default proxy server port
+local_backend: true
+
+publish_mode: editorial_workflow
+
+# Add the route to your images, so Netlify CMS knows where to save uploads to.
+media_folder: "src/assets/images"
+public_folder: "/assets/images"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    create: false # Change to true to allow editors to create new pages
+    delete: false
+    files:
+      - label: "Accueil"
+        name: "index"
+        file: "src/content/pages/index.md"
+        fields:
+          - { label: "Titre", name: "title" }
+          - { label: "Contenu", name: "body", widget: "markdown" }
+      - label: "A propos"
+        name: "about"
+        file: "src/content/pages/a-propos.md"
+        fields:
+          - { label: "Titre", name: "title" }
+          - { label: "Contenu", name: "body", widget: "markdown" }
+          - label: "Musiciens"
+            name: "musicians"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "Nom", name: "name" }
+              - { label: "Instrument", name: "instrument" }
+              - { label: "Image", name: "img", widget: image }
+      - label: "Actualités"
+        name: "blog"
+        file: "src/content/pages/actualites.md"
+        fields:
+          - { label: "Titre", name: "title" }
+          - { label: "Contenu", name: "body", widget: "markdown" }
+      - label: "Répertoire"
+        name: "repertoire"
+        file: "src/content/pages/repertoire.md"
+        fields:
+          - { label: "Titre", name: "title" }
+          - { label: "Contenu", name: "body", widget: "markdown" }
+          - label: "Répertoire"
+            name: "repertoire"
+            widget: "list"
+            allow_add: true
+            collapsed: false
+            label_singular: chanson
+            summary: "{{fields.track}}"
+            field: { label: "Nom", name: "track" }
+      - label: "Évènements"
+        name: "events"
+        file: "src/content/pages/evenements.md"
+        fields:
+          - { label: "Titre", name: "title" }
+          - { label: "Contenu", name: "body", widget: "markdown" }
+  - name: "blog"
+    label: "Actualités"
+    label_singular: "Actualité"
+    folder: "src/content/posts"
+    create: true
+    summary: "{{date | date('DD/MM/YYYY')}} - {{title}}"
+    sortable_fields: [date]
+    fields:
+      - { label: "Titre", name: "title" }
+      - { label: "Puliée le", name: "date", widget: "date" }
+      - { label: "Contenu", name: "body", widget: "markdown" }
+  - name: "events"
+    label: "Évènements"
+    label_singular: "Évènement"
+    folder: "src/content/events"
+    create: true
+    summary: "{{start.date | date('DD/MM/YYYY')}} - {{title}}"
+    sortable_fields: [start.date]
+    fields:
+      - { label: "Titre", name: "title" }
+      - {
+          label: "Lieu",
+          name: "location",
+          hint: "Nom du lieu - Code postal Ville",
+        }
+      - label: "Horaires"
+        name: "start"
+        widget: "object"
+        fields:
+          - { label: "Date", name: "date", widget: "date" }
+          - { label: "Heure", name: "hour", widget: "string" }
+      - { label: "Contenu", name: "body", widget: "markdown" }
