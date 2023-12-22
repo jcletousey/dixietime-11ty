@@ -1,10 +1,16 @@
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const eleventyRssPlugin = require("@11ty/eleventy-plugin-rss");
+const markdownIt = require("markdown-it");
+const markdownItAttrs = require("markdown-it-attrs");
 
 module.exports = function (eleventyConfig) {
   // Plugins
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
   eleventyConfig.addPlugin(eleventyRssPlugin);
+
+  // Markdown
+  const mdRender = new markdownIt({ html: true }).use(markdownItAttrs);
+  eleventyConfig.setLibrary("md", mdRender);
 
   // Collections
   eleventyConfig.addCollection(`pages`, function (collection) {
