@@ -4,7 +4,7 @@
   "description": "Dixie Time's website",
   "main": "index.js",
   "scripts": {
-    "cms:serve": "npx netlify-cms-proxy-server",
+    "cms:serve": "npx @staticcms/proxy-server",
     "tailwind:process": "npx postcss src/assets/styles/global.css --o src/assets/styles/main.css",
     "tailwind:serve": "npx postcss src/assets/styles/global.css --o src/assets/styles/main.css --watch",
     "serve": "npx @11ty/eleventy --serve",

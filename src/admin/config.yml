@@ -10,8 +10,12 @@ publish_mode: editorial_workflow
 media_folder: "src/assets/images"
 public_folder: "/assets/images"
 
+locale: "fr"
+display_url: https://dixietime.fr
+
 collections:
   - name: "pages"
+    icon: house
     label: "Pages"
     create: false # Change to true to allow editors to create new pages
     delete: false
@@ -54,8 +58,9 @@ collections:
             allow_add: true
             collapsed: false
             label_singular: chanson
-            summary: "{{fields.track}}"
-            field: { label: "Nom", name: "track" }
+            summary: "{{track}}"
+            fields:
+              - { label: "Nom", name: "track" }
       - label: "Évènements"
         name: "events"
         file: "src/content/pages/evenements.md"
@@ -68,29 +73,83 @@ collections:
     folder: "src/content/posts"
     create: true
     summary: "{{date | date('DD/MM/YYYY')}} - {{title}}"
-    sortable_fields: [date]
+    sortable_fields:
+      fields: [date]
+      default:
+        field: date
+        direction: Descending
     fields:
       - { label: "Titre", name: "title" }
-      - { label: "Puliée le", name: "date", widget: "date" }
+      - {
+          label: "Puliée le",
+          name: "date",
+          widget: "datetime",
+          date_format: "dd/MM/yyyy",
+        }
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        allow_add: true
+        default: ["concert"]
+        fields:
+          - name: tag
+            label: Tag
+            widget: string
+        hint: "Séparés par des virgules s'il y en a plusieurs"
       - { label: "Contenu", name: "body", widget: "markdown" }
   - name: "events"
     label: "Évènements"
     label_singular: "Évènement"
     folder: "src/content/events"
     create: true
-    summary: "{{start.date | date('DD/MM/YYYY')}} - {{title}}"
-    sortable_fields: [start.date]
+    summary: "{{start.date | date('DD/MM/YYYY')}} - {{title}} - {{location.place}}"
+    sortable_fields:
+      fields: [start.date]
+      default:
+        field: start.date
+        direction: Descending
     fields:
       - { label: "Titre", name: "title" }
-      - {
-          label: "Lieu",
-          name: "location",
-          hint: "Nom du lieu - Code postal Ville",
-        }
+      - label: "Lieu"
+        name: "location"
+        widget: "object"
+        fields:
+          - { label: "Nom", name: "place", widget: "string", required: false }
+          - {
+              label: "Adresse",
+              name: "address",
+              widget: "string",
+              required: false,
+              hint: "Sans le code postal et la ville",
+            }
+          - {
+              label: "Ville",
+              name: "city",
+              widget: "string",
+              required: false,
+              hint: "Code postal (optionnel) et ville",
+            }
       - label: "Horaires"
         name: "start"
         widget: "object"
         fields:
-          - { label: "Date", name: "date", widget: "date" }
-          - { label: "Heure", name: "hour", widget: "string" }
-      - { label: "Contenu", name: "body", widget: "markdown" }
+          - {
+              label: "Date",
+              name: "date",
+              widget: "datetime",
+              date_format: "dd/MM/yyyy",
+              time_format: false,
+            }
+          - {
+              label: "Heure",
+              name: "hour",
+              widget: "string",
+              hint: "Ex: 20h, A partir de 19h, De 18h à 23h etc.",
+              required: false,
+            }
+      - label: "Tarif"
+        name: "price"
+        widget: "string"
+        required: false
+        hint: "Ex: 5€ (Si non rempli, gratuit)"
+      - { label: "Contenu", name: "body", widget: "markdown", required: false }
