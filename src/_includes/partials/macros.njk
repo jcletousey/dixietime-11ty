@@ -39,7 +39,13 @@
   {% for event in eventList | reverse %}
   <article class="flex p-2 justify-between odd:bg-gray-100">
     <h{{ headingLevel }} class="w-1/2">{{ event.data.title }}</h{{ headingLevel }}>
-    <p class="w-1/3">{{ event.data.location | addBr | safe }}</p>
+    <div class="w-1/3">
+      <address>
+      <p>{{ event.data.location.place }}</p>
+      <p>{{ event.data.location.address }}</p>
+      <p>{{ event.data.location.city }}</p>
+      </address>
+    </div>
     <p>
       <time datetime="{{ event.data.start.date }}">
       {% if shortdate %}

@@ -1,6 +1,7 @@
 ---
 title: Concert
-location: Tessy-Sur-Vire
+location:
+  city: Tessy-Sur-Vire
 start:
   date: 2016-09-10
 ---
