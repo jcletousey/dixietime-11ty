@@ -38,6 +38,6 @@ Voici quelques photos issues d'évènements auxquels nous avons participés.
 
 {{ macros.figure("villedieu.jpg", "Frédéric au premier plan, Jean au second et Josselin au fond, en train de jouer", "Villedieu - 6 avril 2018") }}
 
-{{ macros.figure("la_cahute_2.jpg", "Le groupe, vu de devant, en train de jouer en extérieur sur le sable", "La Cahute - 21 septembre 2021") }}
+{{ macros.figure("la_cahute_2.jpg", "Le groupe, vu de devant, en train de jouer en extérieur sur le sable, sous une tonnelle", "La Cahute - 21 septembre 2021") }}
 
 {{ macros.figure("la_cahute_1.jpg", "Le groupe, vu de côté, en train de jouer en extérieur devant La Cahute, sur le sable et au milieu du public installé autour de tables", "La Cahute - 21 septembre 2021") }}
