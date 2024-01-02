@@ -77,6 +77,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget("./tailwind.config.js");
   eleventyConfig.addPassthroughCopy("./src/favicon.ico");
   eleventyConfig.addPassthroughCopy("./src/admin");
+  eleventyConfig.addPassthroughCopy("./templates");
   eleventyConfig.addPassthroughCopy("./src/assets/player");
   eleventyConfig.addPassthroughCopy("./src/assets/images");
   eleventyConfig.addPassthroughCopy("./src/assets/fonts");
