@@ -5,6 +5,6 @@ location:
   address: Cale de Bricqueville, Les Salines
   city: 50290 Bricqueville-Sur-Mer
 start:
-  date: 2024-07-01
+  date: 2023-07-01
   hour: 20h
 ---
