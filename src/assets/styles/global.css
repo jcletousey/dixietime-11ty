@@ -16,7 +16,6 @@ body {
   @apply font-bold;
   @apply bg-white;
   @apply text-amber-900;
-  @apply rounded-sm;
 }
 
 .flow > * + * {

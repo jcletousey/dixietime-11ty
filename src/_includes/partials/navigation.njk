@@ -6,7 +6,7 @@
   <ul class="flex flex-wrap gap-x-6 gap-y-4 justify-center" role="list">
   {% for entry in navPages %}
     <li>
-      <a{% if currentUrl === entry.url %} aria-current="page"{% endif %} 
+      <a class="hover:bg-white/25 focus-within:bg-white/25 p-2 rounded"{% if currentUrl === entry.url %} aria-current="page"{% endif %} 
         href="{{ entry.url | url }}" class="p-2">
         {{ entry.title }}
       </a>
