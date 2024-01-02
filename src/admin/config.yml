@@ -1,9 +1,6 @@
 backend:
   name: git-gateway
 
-# when using the default proxy server port
-local_backend: true
-
 publish_mode: editorial_workflow
 
 # Add the route to your images, so Netlify CMS knows where to save uploads to.
@@ -15,7 +12,6 @@ display_url: https://dixietime.fr
 
 collections:
   - name: "pages"
-    icon: house
     label: "Pages"
     create: false # Change to true to allow editors to create new pages
     delete: false
@@ -153,3 +149,8 @@ collections:
         required: false
         hint: "Ex: 5€ (Si non rempli, gratuit)"
       - { label: "Contenu", name: "body", widget: "markdown", required: false }
+      - label: "Lien"
+        name: "link"
+        widget: "string"
+        required: false
+        hint: "Lien vers la page de l'évènement sur le site d'origine"
